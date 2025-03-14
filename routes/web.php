@@ -14,3 +14,11 @@ Route::post('login', [LoginController::class, 'authenticate'])->name('authentica
 Route::post('register', [LoginController::class, 'completeRegister'])->name('completeRegister');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('test', function () {
+    return view('test');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
