@@ -20,4 +20,5 @@
         </div>
     </div>
 </div>
+    <post-component></post-component>
 @endsection

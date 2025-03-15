@@ -8,9 +8,7 @@
     <title>test</title>
 </head>
 <body>
-<p id="1">
-    text
-</p>
+
 </body>
 </html>
 <script>
