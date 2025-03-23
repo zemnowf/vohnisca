@@ -18,6 +18,11 @@ const app = createApp({});
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
 
+import PostComponent from "./components/PostComponent.vue";
+app.component('post-component', PostComponent);
+
+import CampaignListComponent from "./components/mainpage/CampaignListComponent.vue";
+app.component('campaign-list-component', CampaignListComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
