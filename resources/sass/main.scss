@@ -10,6 +10,12 @@
         "wdth" 100;
 }
 
+.v-wrapper {
+    background: rgb(234,130,23);
+    background: linear-gradient(0deg, rgba(234,130,23,1) 0%, rgba(38,44,119,1) 36%, rgba(1,1,24,1) 100%);
+    color: #718096;
+}
+
 img {
     max-width: 100%;
 }

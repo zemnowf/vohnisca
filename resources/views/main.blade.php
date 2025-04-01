@@ -14,7 +14,7 @@
                 the Temple of Flame fans the fires of faith, and shadowy factions vie for power.
             </p>
             <p>
-                You were brought here in chains. Now, fate—or a dagger in the dark—will decide
+                You were brought here in chains. Now, fate or a dagger in the dark will decide
                 if you die in the arena, rise as a legend, or unravel the city’s cursed history.
 
             </p>
