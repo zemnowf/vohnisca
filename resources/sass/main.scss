@@ -10,8 +10,90 @@
         "wdth" 100;
 }
 
-img {
-    max-width: 100%;
+.v-wrapper {
+    background: rgb(234,130,23);
+    background: linear-gradient(0deg, rgba(234,130,23,1) 0%, rgba(38,44,119,1) 36%, rgba(1,1,24,1) 100%);
+    color: #718096;
+    width: 100%;
 }
 
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 0;
+}
+
+.navbar-logo {
+    font-size: 29px;
+    font-weight: 77;
+    text-decoration: none;
+    color: #718096;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #e2e8f0;
+}
+
+header nav ul li:is(.active) a {
+    color: #718096
+}
+
+header nav ul li:not(.active) a:hover {
+    color: darkorange;
+    border-bottom: 1px solid darkorange;
+    transition: all 777ms ease;
+}
+
+.main-campaigns {
+    position: relative;
+    display: flex;
+}
+
+.main-campaign-info {
+    width: 50%;
+    display: inline-block;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 0px 1px darkorange;
+    border-radius: 10px;
+
+}
+
+
+
+.main-campaign-info img {
+    max-width: 77%;
+    background-size: cover;
+    float: right;
+    opacity: 50%;
+
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    shape-margin: 0px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+
+}
+
+.v-footer {
+    margin-top: 170px;
+}
 

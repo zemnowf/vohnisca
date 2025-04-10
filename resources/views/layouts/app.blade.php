@@ -18,11 +18,13 @@
 </head>
 <body>
     <div id="app">
-        @include('layouts.header');
-        <div class="container">
-            @yield('content')
+        <div class="v-wrapper">
+            @include('layouts.header')
+            <div class="container">
+                @yield('content')
+            </div>
+            @include('layouts.footer')
         </div>
-
     </div>
 </body>
 </html>

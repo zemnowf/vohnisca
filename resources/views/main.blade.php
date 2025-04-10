@@ -4,6 +4,7 @@
     <div class="main-campaigns container">
         <div class="main-campaign-info">
             <h3>Saladan</h3>
+            <img src="/files/saladan.webp" alt="Saladan">
             <p>
                 Blood and Sand
             </p>
@@ -14,17 +15,18 @@
                 the Temple of Flame fans the fires of faith, and shadowy factions vie for power.
             </p>
             <p>
-                You were brought here in chains. Now, fate—or a dagger in the dark—will decide
+                You were brought here in chains. Now, fate or a dagger in the dark will decide
                 if you die in the arena, rise as a legend, or unravel the city’s cursed history.
 
             </p>
             <p>
                 Will you fight for freedom, for power… or simply to survive?
             </p>
-            <img src="/files/saladan.webp" alt="Saladan">
+
         </div>
         <div class="main-campaign-info">
             <h3>Browleime</h3>
+            <img src="/files/browleime.webp" alt="Browleime">
             <p>
                 City of Salt, Secrets, and Storm
             </p>
@@ -43,7 +45,6 @@
             <p>
                 Will you answer the call of the sea? Or will Browleime’s secrets drag you under?
             </p>
-            <img src="/files/browleime.webp" alt="Browleime">
         </div>
 
     </div>
