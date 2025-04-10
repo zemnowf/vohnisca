@@ -19,10 +19,11 @@
 <body>
     <div id="app">
         <div class="v-wrapper">
-            @include('layouts.header');
+            @include('layouts.header')
             <div class="container">
                 @yield('content')
             </div>
+            @include('layouts.footer')
         </div>
     </div>
 </body>

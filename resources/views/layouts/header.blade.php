@@ -1,7 +1,7 @@
 <header>
     <div class="container">
                 <span class="logo">
-                    <a class="navbar-brand" href="{{ url('/') }}">VOHNISCA</a>
+                    <a class="navbar-logo" href="{{ url('/') }}">VOHNISCA</a>
                 </span>
         <nav>
             <ul>
