@@ -2,7 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdminUser;
+use App\Models\Campaign;
+use App\Models\Encounter;
+use App\Models\Note;
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,11 +18,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $users = User::factory(1)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $campaigns = Campaign::factory(2)->create([
+            'user_id' => $users->random()->id,
+        ]);
+
+        $encounters = Encounter::factory(4)->create([
+            'campaign_id' => $campaigns->random()->id,
+        ]);
+
+        $notes = Note::factory(6)->create([
+            'encounter_id' => $encounters->random()->id,
+            'user_id' => $users->random()->id,
+        ]);
+
+        AdminUser::firstOrCreate([
+            "name" => "Master",
+            "email" => "master@example.com",
+            "password" => bcrypt("djuybixf1"),
         ]);
     }
 }
