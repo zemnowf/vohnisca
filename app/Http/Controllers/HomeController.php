@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campaign;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,10 +12,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
 
     /**
      * Show the application dashboard.
@@ -23,6 +21,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $campaigns = Campaign::orderBy('created_at', 'desc')->limit(4)->paginate(4);
+        return view('main', [
+            'campaigns' => $campaigns
+        ]);
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Campaign\CampaignController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::get('register', [LoginController::class, 'register'])->name('register');
@@ -21,4 +21,9 @@ Route::get('test', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns.index');
+Route::get('campaigns/{id?}', [CampaignController::class, 'show'])->name('campaigns.show');
+
+
