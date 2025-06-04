@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -52,8 +52,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255', 'min:6', 'regex:/^[a-zA-Z0-9]+$/', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ], [
-            //'name' => 'Must be minimum of 6 characters,  has letters and numbers.',
         ]);
     }
 
