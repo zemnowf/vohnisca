@@ -8,10 +8,7 @@
     <title>test</title>
 </head>
 <body>
-
+{{ phpinfo() }}
 </body>
 </html>
-<script>
-    let $parag = document.querySelector('1');
-    console.log($parag);
-</script>
+

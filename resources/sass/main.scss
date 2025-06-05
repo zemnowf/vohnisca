@@ -918,4 +918,221 @@ body {
     text-decoration: underline;
 }
 
+/* Campaign Create Container */
+.campaign-create-container {
+    padding: 40px 20px;
+    background: rgba(1, 1, 24, 0.2);
+    min-height: calc(100vh - 200px);
+}
+
+.campaign-create-card {
+    background: rgba(38, 44, 119, 0.8);
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.campaign-create-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.campaign-create-header h2 {
+    color: darkorange;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.campaign-create-header p {
+    color: #a1a9ba;
+    font-size: 0.95rem;
+}
+
+/* Form Styles */
+.campaign-create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-input {
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+    background: rgba(1, 1, 24, 0.5);
+    color: #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: darkorange;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
+
+.form-input::placeholder {
+    color: #718096;
+}
+
+textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* File Upload Styles */
+.file-upload-wrapper {
+    position: relative;
+}
+
+.file-upload-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px dashed rgba(255, 140, 0, 0.3);
+    border-radius: 6px;
+    background: rgba(1, 1, 24, 0.3);
+    color: #a1a9ba;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.file-upload-label:hover {
+    border-color: darkorange;
+    background: rgba(1, 1, 24, 0.5);
+}
+
+.file-upload-label i {
+    font-size: 1.2rem;
+    color: darkorange;
+}
+
+.file-upload-preview {
+    margin-top: 15px;
+}
+
+.file-upload-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+/* Button Styles */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.campaign-submit-btn {
+    padding: 14px 25px;
+    border-radius: 6px;
+    background: darkorange;
+    color: #010118;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.campaign-submit-btn:hover {
+    background: #ff8c00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.campaign-cancel-btn {
+    padding: 14px 25px;
+    border-radius: 6px;
+    background: transparent;
+    color: darkorange;
+    border: 1px solid darkorange;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+}
+
+.campaign-cancel-btn:hover {
+    background: rgba(255, 140, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* CKEditor Styles */
+.ck.ck-editor {
+    width: 100%;
+}
+
+.ck.ck-content {
+    min-height: 200px;
+    background: rgba(1, 1, 24, 0.5) !important;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(255, 140, 0, 0.3) !important;
+}
+
+.ck.ck-toolbar {
+    background: rgba(38, 44, 119, 0.8) !important;
+    border: 1px solid rgba(255, 140, 0, 0.3) !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .campaign-create-card {
+        padding: 30px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .campaign-create-header h2 {
+        font-size: 1.7rem;
+    }
+}
 
