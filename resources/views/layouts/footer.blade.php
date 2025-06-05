@@ -3,7 +3,7 @@
         <div class="footer-grid">
             <div class="footer-about">
                 <h3 class="footer-title">VOHNISCA</h3>
-                <p class="footer-text">Powerful campaign management platform for your marketing needs.</p>
+                <p class="footer-text">Campaign management platform</p>
                 <div class="footer-social">
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>

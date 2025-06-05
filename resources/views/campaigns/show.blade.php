@@ -50,6 +50,10 @@
                     <ul class="sidebar-meta">
                         @isset( $campaign->created_at )
                         <li>
+                            <i class="fas"></i>
+                            <span>Author: <a href="#">{{ $campaign->author->name }}</span>
+                        </li>
+                        <li>
                             <i class="fas fa-calendar-alt"></i>
                             <span>Created: {{ $campaign->created_at->format('d M Y') }}</span>
                         </li>
