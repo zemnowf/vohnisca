@@ -667,10 +667,10 @@ body {
 
 
 /* pagination */
- .custom-pagination {
-     margin: 30px 0;
-     font-family: "Open Sans", sans-serif;
- }
+.custom-pagination {
+    margin: 30px 0;
+    font-family: "Open Sans", sans-serif;
+}
 
 .pagination-mobile {
     display: flex;
@@ -717,16 +717,19 @@ body {
     color: #1a1a2e;
 }
 
-.pagination-item.active .pagination-link {
+.pagination-item.active .pagination-link,
+.pagination-link.active {
     background-color: darkorange;
     color: #1a1a2e;
     font-weight: bold;
+    border-color: darkorange;
 }
 
 .pagination-item.disabled .pagination-link {
     background-color: rgba(38, 44, 119, 0.3);
     color: #718096;
     cursor: not-allowed;
+    border-color: rgba(38, 44, 119, 0.3);
 }
 
 .pagination-stats {

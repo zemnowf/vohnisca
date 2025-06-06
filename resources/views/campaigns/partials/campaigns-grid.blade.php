@@ -6,6 +6,6 @@
     @endisset
 </div>
 
-@if($campaigns->hasPages())
+@if($pagination && $campaigns->hasPages())
     {{ $campaigns->links('layouts.pagination.default-pagination') }}
 @endif

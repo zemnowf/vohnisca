@@ -6,8 +6,5 @@
     @auth
         @include('campaigns.partials.start-new-campaign')
     @endauth
-    @isset($campaigns)
-        @include('campaigns.partials.campaigns-grid', ['campaigns' => $campaigns])
-    @endisset
-
+    <campaign-grid-component :guest={{ json_encode(auth()->guest()) }}></campaign-grid-component>
 @endsection

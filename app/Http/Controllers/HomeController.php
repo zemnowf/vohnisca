@@ -21,9 +21,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $campaigns = Campaign::orderBy('created_at', 'desc')->limit(4)->paginate(4);
-        return view('main', [
-            'campaigns' => $campaigns
-        ]);
+        return view('main');
     }
 }
