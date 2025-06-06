@@ -17,6 +17,7 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //campaigns
+Route::get('/getCampaigns', [CampaignController::class, 'getCampaigns'])->name('getCampaigns');
 Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns.index');
 Route::get('/campaigns/{id?}', [CampaignController::class, 'show'])->name('campaigns.show');
 Route::get('/create-campaign', [CampaignController::class, 'showCreateNewCampaign'])

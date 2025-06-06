@@ -3,9 +3,8 @@
 @section('title', 'Vohnisca')
 
 @section('content')
-
-    @isset($campaigns)
-        @include('campaigns.partials.campaigns-grid', ['campaigns' => $campaigns])
-    @endisset
-
+    <campaign-grid-no-pag-component
+        :guest="{{ json_encode(auth()->guest()) }}"
+        :elements-per-page="2"
+    ></campaign-grid-no-pag-component>
 @endsection

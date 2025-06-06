@@ -19,11 +19,16 @@ const app = createApp({});
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
 
-import PostComponent from "./components/PostComponent.vue";
-app.component('post-component', PostComponent);
+import CampaignGridComponent from "./components/campaigns/CampaignGridComponent.vue";
+app.component('campaign-grid-component', CampaignGridComponent);
 
-import CampaignListComponent from "./components/mainpage/CampaignListComponent.vue";
-app.component('campaign-list-component', CampaignListComponent);
+import CampaignGridNoPagComponent from "./components/campaigns/CampaignGridNoPagComponent.vue";
+app.component('campaign-grid-no-pag-component', CampaignGridNoPagComponent);
+
+import Pagination from "./components/Shared/Pagination.vue";
+app.component('pagination', Pagination)
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

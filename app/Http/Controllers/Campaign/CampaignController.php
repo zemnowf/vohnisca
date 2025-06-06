@@ -5,16 +5,21 @@ namespace App\Http\Controllers\Campaign;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewCampaignForm;
 use App\Models\Campaign;
+use http\Env\Request;
 use Illuminate\Support\Facades\Storage;
 
 class CampaignController extends Controller
 {
     public function index()
     {
-        $campaigns = Campaign::orderBy('created_at', 'desc')->paginate(2);
-        return view('campaigns.index', [
-            'campaigns' => $campaigns
-        ]);
+        return view('campaigns.index');
+    }
+
+    public function getCampaigns()
+    {
+        $perPage = request()->input('perPage', 10);
+        $campaigns = Campaign::orderBy('created_at', 'desc')->paginate($perPage);
+        return $campaigns;
     }
 
     public function show($id)
