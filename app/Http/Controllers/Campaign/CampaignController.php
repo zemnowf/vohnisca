@@ -49,9 +49,6 @@ class CampaignController extends Controller
             $validatedData['preview_image'] = $this->storeImageAction->execute(
                 $request->file('preview_image')
             );
-
-//            $path = Storage::disk('public')->putFile('images', $request->file('preview_image'));
-//            $validated['preview_image'] = 'storage/' . $path;
         }
 
         $campaign = Campaign::create($validatedData);
