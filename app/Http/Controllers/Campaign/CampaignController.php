@@ -2,14 +2,20 @@
 
 namespace App\Http\Controllers\Campaign;
 
+use App\Actions\StoreImageAction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewCampaignForm;
 use App\Models\Campaign;
 use http\Env\Request;
-use Illuminate\Support\Facades\Storage;
+
 
 class CampaignController extends Controller
 {
+
+    public function __construct(
+        protected StoreImageAction $storeImageAction,
+    ) {}
+
     public function index()
     {
         return view('campaigns.index');
@@ -17,7 +23,7 @@ class CampaignController extends Controller
 
     public function getCampaigns()
     {
-        $perPage = request()->input('perPage', 10);
+        $perPage = request()->input('perPage', 3);
         $campaigns = Campaign::orderBy('created_at', 'desc')->paginate($perPage);
         return $campaigns;
     }
@@ -37,14 +43,18 @@ class CampaignController extends Controller
 
     public function createNewCampaign(NewCampaignForm $request)
     {
-        $validated = $request->validated();
+        $validatedData = $request->validated();
 
-        if ($request->hasFile('preview_image') && $request->file('preview_image')->isValid()) {
-            $path = Storage::disk('public')->putFile('images', $request->file('preview_image'));
-            $validated['preview_image'] = 'storage/' . $path;
+        if ($request->hasFile('preview_image')) {
+            $validatedData['preview_image'] = $this->storeImageAction->execute(
+                $request->file('preview_image')
+            );
+
+//            $path = Storage::disk('public')->putFile('images', $request->file('preview_image'));
+//            $validated['preview_image'] = 'storage/' . $path;
         }
 
-        $campaign = Campaign::create($validated);
+        $campaign = Campaign::create($validatedData);
         return redirect(route('campaigns.show', ['campaign' => $campaign]));
     }
 
