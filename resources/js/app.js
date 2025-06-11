@@ -26,9 +26,10 @@ import CampaignGridNoPagComponent from "./components/campaigns/CampaignGridNoPag
 app.component('campaign-grid-no-pag-component', CampaignGridNoPagComponent);
 
 import Pagination from "./components/Shared/Pagination.vue";
-app.component('pagination', Pagination)
+app.component('pagination', Pagination);
 
-
+import CampaignFormComponent from "./components/campaigns/CampaignFormComponent.vue";
+app.component('campaign-form', CampaignFormComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -48,3 +49,13 @@ app.component('pagination', Pagination)
  */
 
 app.mount('#app');
+
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+if (token) {
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+    console.error('CSRF token not found');
+}

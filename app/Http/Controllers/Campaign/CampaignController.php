@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Campaign;
 
 use App\Actions\StoreImageAction;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\NewCampaignForm;
+use App\Http\Requests\Campaign\NewCampaignForm;
 use App\Models\Campaign;
-use http\Env\Request;
 
 
 class CampaignController extends Controller
@@ -36,11 +35,6 @@ class CampaignController extends Controller
         ]);
     }
 
-    public function showCreateNewCampaign()
-    {
-        return view('campaigns.create-new-campaign');
-    }
-
     public function createNewCampaign(NewCampaignForm $request)
     {
         $validatedData = $request->validated();
@@ -53,12 +47,5 @@ class CampaignController extends Controller
 
         $campaign = Campaign::create($validatedData);
         return redirect(route('campaigns.show', ['campaign' => $campaign]));
-    }
-
-    public function showStartNewCampaign($id)
-    {
-        return view('campaigns.start-new-campaign', [
-            'id' => $id
-        ]);
     }
 }
