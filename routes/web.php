@@ -13,16 +13,28 @@ Route::get('test', function () {
 
 Auth::routes();
 
+Route::get('/getAuthedUser', function () {
+    return auth()->user()
+        ? [ 'user' => auth()->user() ]
+        : null;
+});
+
 //main
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //campaigns
-Route::get('/getCampaigns', [CampaignController::class, 'getCampaigns'])->name('getCampaigns');
-Route::get('/campaigns', [CampaignController::class, 'index'])->name('campaigns.index');
-Route::get('/campaigns/{id?}', [CampaignController::class, 'show'])->name('campaigns.show');
-Route::get('/create-campaign', [CampaignController::class, 'showCreateNewCampaign'])
-    ->name('campaigns.create')
+Route::get('/getCampaigns', [CampaignController::class, 'getCampaigns'])
+    ->name('getCampaigns');
+Route::get('/campaigns', [CampaignController::class, 'index'])
+    ->name('campaigns.index');
+Route::get('/campaigns/{id?}', [CampaignController::class, 'show'])
+    ->name('campaigns.show');
+
+Route::get('/create-campaign', function () {
+    return view('campaigns.create');
+})->name('campaigns.create')
     ->middleware('auth');
+
 Route::post('/create-campaign', [CampaignController::class, 'createNewCampaign'])
     ->name('campaigns.store')
     ->middleware('auth');

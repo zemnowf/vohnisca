@@ -49,7 +49,7 @@ export default {
 
     methods: {
         getCampaigns(page = 1) {
-            axios.get(`/getCampaigns?page=${page}`)
+            axios.get(`/api/getCampaigns?page=${page}`)
                 .then(response => {
                     this.campaigns = response.data.data;
                     this.pagination = response.data;
