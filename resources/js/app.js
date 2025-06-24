@@ -30,6 +30,9 @@ app.component('pagination', Pagination);
 
 import CampaignFormComponent from "./components/campaigns/CampaignFormComponent.vue";
 app.component('campaign-form', CampaignFormComponent);
+
+import CampaignElementComponent from "./components/campaigns/CampaignElementComponent.vue";
+app.component('campaign-element', CampaignElementComponent);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -50,7 +53,7 @@ app.component('campaign-form', CampaignFormComponent);
 
 app.mount('#app');
 
-window.axios = require('axios');
+//window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 let token = document.head.querySelector('meta[name="csrf-token"]');

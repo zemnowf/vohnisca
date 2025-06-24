@@ -13,6 +13,12 @@ Route::get('test', function () {
 
 Auth::routes();
 
+Route::get('/getAuthedUser', function () {
+    return auth()->user()
+        ? [ 'user' => auth()->user() ]
+        : null;
+});
+
 //main
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 

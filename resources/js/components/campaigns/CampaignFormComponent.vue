@@ -138,7 +138,7 @@ export default {
                     }
                 }
 
-                const response = await axios.post('/api/create-campaign/', formData, {
+                const response = await axios.post('/api/createCampaign/', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data'
                     }
@@ -160,5 +160,5 @@ export default {
 </script>
 
 <style scoped>
-/* Добавьте сюда свои стили или оставьте как есть, если они уже в app.css */
+
 </style>

@@ -10,6 +10,6 @@ class StoreImageAction
     public function execute(UploadedFile $file): string
     {
         $path = Storage::disk('public')->putFile('images', $file);
-        return 'storage/' . $path;
+        return '/storage/' . $path;
     }
 }
